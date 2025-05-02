@@ -11,10 +11,10 @@ def validar_nota():
     while True:
         try:
             nota = float(input(" - Ingresa una calificacion: "))
-            if  1  <= nota <= 100:
+            if  0  <= nota <= 100:
                 break
             else:
-                print(" * Las notas deben ser entre (1-100)")
+                print(" * Las notas deben ser entre (0-100)")
             
         except ValueError:
             print(" * Error: no es un número decimal válido")
@@ -46,7 +46,7 @@ def validar_lista():
                 for lista_notas in notas.split(","): 
                     lista_notas = float(lista_notas)  
 
-                    if lista_notas >= 1 and lista_notas <=100:
+                    if lista_notas >= 0 and lista_notas <=100:
                         lista_final.append(lista_notas)  
                     else:
                         print(" * Las notas deben ser entre (0-100)")
