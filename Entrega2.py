@@ -14,7 +14,7 @@ def validar_nota():
             if  1  <= nota <= 100:
                 break
             else:
-                print(" * Las notas deben ser entre (0-100)")
+                print(" * Las notas deben ser entre (1-100)")
             
         except ValueError:
             print(" * Error: no es un número decimal válido")
