@@ -7,7 +7,7 @@ def limpiar ():
 
 
 
-def validar_nota():
+def validar_nota():# En esta función validamos que el usuario ingresa un calificacion correcta y retorno el valor de ella.
     while True:
         try:
             nota = float(input(" - Ingresa una calificacion: "))
@@ -21,7 +21,7 @@ def validar_nota():
 
     return nota
 
-def estado(): # En está función encontraremos todo el proceso:
+def estado(): # En está función encontraremos todo el proceso de la opción 1 del menu, el cual seria que una vez el usuario haya ingresado la  calificacion,  
 
     limpiar()
     print("---------\n\033[1mOPCIÓN 1\033[0m  \n---------")
@@ -34,35 +34,35 @@ def estado(): # En está función encontraremos todo el proceso:
     else:
       print(f" = Con la nota {calificacion} estás |aprobado| ¡Felicidades!\n")
     
-def validar_lista():
+def validar_lista(): #Es está función  validamos que el usuario ingrese correctamente una lista separadas por comas. Una vez validado, se retorna de lista_final.
 
     while True:
         notas = (input(" - Ingresa las notas seperadas por comas: ")).replace(" ","")
     
-        if "," in notas:
+        if "," in notas:# Buscamos una coma en la lista, si la hay, se sigue valindado.
 
             lista_final = []
             try:
-                for lista_notas in notas.split(","): 
-                    lista_notas = float(lista_notas)  
+                for lista_notas in notas.split(","):  # Aquí separamos notas en subcadenas donde encuentre una coma.
+                    lista_notas = float(lista_notas)  # Si puede coventir el string a float, continua, si no, lo retorna a except.
 
-                    if lista_notas >= 0 and lista_notas <=100:
+                    if lista_notas >= 0 and lista_notas <=100:# Si las notas están en el rango indicado, las agrega a lista_final
                         lista_final.append(lista_notas)  
                     else:
-                        print(" * Las notas deben ser entre (0-100)")
+                        print(" * Las notas deben ser entre (0-100)")# Imprime el error, y sale del for para volver al while.
                         break
                 else: 
                  break
                 
             except:
                     print(" * Debes ingresar las notas separadas por comas y no pueden ser caracteres. Ejemplo: (5.0, 4.0, 2.0)")   
-        else:
+        else: # Si no encuentra una coma, imprime lo sig:
             print(" * No puedes ingresar caracteres. Solo puedes ingresar notas, por ejemplo: (5.0, 4.0, 2.0)")
 
     return lista_final
 
 
-def promedio(): # 2
+def promedio(): # En esta función llamamos a la lista validada y calculamos el promedio
 
     limpiar()
     print("---------\n\033[1mOPCIÓN 2\033[0m  \n---------")
@@ -81,7 +81,7 @@ def promedio(): # 2
     return     
 
         
-def comparar(): # 3
+def comparar(): # En esta funcion llamamos a la lista y calificacion validada y buscamos cuantas notas son mayores que el valor ingresado
         
         limpiar()
         print("---------\n\033[1mOPCIÓN 3\033[0m  \n---------")
@@ -101,7 +101,7 @@ def comparar(): # 3
         return
 
 
-def verificar():
+def verificar(): # En esta funcion llamamos a la lista y calificacion validada y buscamos cuantas notas son iguales que el valor ingresado
      
     limpiar()
     print("---------\n\033[1mOPCIÓN 4\033[0m  \n---------")
@@ -119,7 +119,7 @@ def verificar():
 
     return
 
-def salir():
+def salir():# En esta funcion imprimimos un msj si el usuario ingresa que desea salir 
     limpiar()
     print("\n----------------------------------")
     print("  Proceso finalizado.")
@@ -128,7 +128,7 @@ def salir():
 
     sys.exit()
 
-def menu():
+def menu():# Tenemos el menu donde le mostramos al usuario las opciones que tiene y depende de lo que escoja se llama a la funcion que hace tal proceso
     
     while True:
         limpiar()
